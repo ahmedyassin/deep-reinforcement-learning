@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup</title>
+</head>
+<body>
+This project needs python 10.To install it you need to follow these instructions:
+
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.10 python3.10-venv
+
+then from the project root :
+python3.10 -m venv .venv
+.venv/bin/activate
+source .venv/bin/activate
+pip install -U pip setuptools wheel
+pip install numpy matplotlib pandas jupyter notebook torch gym protobuf==3.20.* grpcio==1.60.1
+pip install --no-deps ./python
+Then you can test unity is installed
+python -c "from unityagents import UnityEnvironment; print('OK')"
+Then you can run the cells in the project.
+
+</body>
+</html>
